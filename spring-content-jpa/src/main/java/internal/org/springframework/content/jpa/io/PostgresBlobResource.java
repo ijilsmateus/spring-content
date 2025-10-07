@@ -98,8 +98,6 @@ public class PostgresBlobResource extends AbstractBlobResource {
             rs = stmt.executeQuery(sql);
             if (!rs.next()) {
                 try {
-                    rs.close();
-                    stmt.close();
                     DataSourceUtils.releaseConnection(conn, ds);
                     return;
                 } catch (SQLException sqle) {
