@@ -60,7 +60,6 @@ public class SQLServerBlobResource extends AbstractBlobResource {
                     DataSourceUtils.releaseConnection(conn, ds);
                     return null;
                 } catch (SQLException sqle) {
-                    log.debug("Failed to release database connection while fetching content ->", sqle);
                     log.error("failed to release database connection while fetching content {}", id, sqle);
                 }
             }
